@@ -14,7 +14,6 @@ const breakpoints = Object.entries(carbonBreakpoints).map(
 
 const theme = ({ themeColor }) => {
   const colors = themes[themeColor] || themes.white;
-  console.log(colors);
   const buttons = getButtons(colors);
   return {
     colors,

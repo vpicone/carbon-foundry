@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { width, space, textStyle, buttonStyle } from 'styled-system';
+import { textStyle, buttonStyle } from 'styled-system';
 
 const getPaddingRight = props => {
   if (props.variant !== 'ghost') return '60px';
@@ -67,7 +67,7 @@ const ButtonStyles = styled.button.attrs({
     }
   }
 
-  ${width} ${space} ${textStyle} ${buttonSize} ${buttonStyle} 
+  ${textStyle} ${buttonSize} ${buttonStyle} 
 `;
 
 const Button = ({ children, icon, ...props }) => (

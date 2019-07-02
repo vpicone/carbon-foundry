@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "start-storybook",
+    "dev": "start-storybook -p 9000",
     "now-build": "build-storybook -c .storybook -o dist"
   },
   "dependencies": {

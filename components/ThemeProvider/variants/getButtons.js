@@ -18,7 +18,7 @@ const getButtons = colors => ({
     },
   },
   tertiary: {
-    backgroundColor: colors.uiBackground,
+    backgroundColor: 'transparent',
     border: `1px solid ${colors.interactive03}`,
     color: colors.interactive03,
     '&:hover:not([disabled])': {
