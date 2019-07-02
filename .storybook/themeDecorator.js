@@ -13,7 +13,7 @@ const Base = styled.div`
 `;
 
 const themeOptions = {
-  White: 'white',
+  white: 'white',
   g10: 'g10',
   g90: 'g90',
   g100: 'g100',
