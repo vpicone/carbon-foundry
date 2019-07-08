@@ -6,6 +6,7 @@ import ThemeProvider from '../components/ThemeProvider';
 const Base = styled.div`
     width: 100%;
     height: 100vh;
+    padding: 2rem;
     background: ${props => props.theme.colors.uiBackground}
     display: flex; 
     justify-content: center;
