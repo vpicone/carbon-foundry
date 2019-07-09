@@ -8,19 +8,24 @@ import {
 
 import getButtons from './variants/getButtons';
 
-const breakpoints = Object.entries(carbonBreakpoints).map(
-  ([, value]) => value.width
-);
-
 const theme = ({ themeColor }) => {
   const colors = themes[themeColor] || themes.white;
   const buttons = getButtons(colors);
+  const breakpoints = [];
+  const mq = {};
+
+  Object.entries(carbonBreakpoints).forEach(([key, value]) => {
+    breakpoints.push(value.width);
+    mq[key] = `@media screen and (min-width: ${value.width})`;
+  });
+
   return {
     colors,
     space: [0, ...spacing],
     textStyles,
     breakpoints,
     buttons,
+    mq,
     fonts: fontFamily('sans'),
   };
 };

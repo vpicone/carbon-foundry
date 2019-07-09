@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { textStyle } from 'styled-system';
+import { textStyle, flexbox, space, layout } from 'styled-system';
+
+import propTypes from '@styled-system/prop-types';
 import Chevron from '@carbon/icons-react/es/chevron--down/16';
 
 const Details = styled.details`
@@ -14,7 +16,7 @@ const Details = styled.details`
     border-top: none;
   }
 
-  ${textStyle};
+  ${textStyle} ${space} ${layout}
 `;
 
 const Summary = styled.summary.attrs({
@@ -73,16 +75,26 @@ const Accordion = ({ title, children, renderIcon, ...rest }) => {
   );
 };
 
-export const AccordionGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
-
 Accordion.propTypes = {
   title: PropTypes.string,
   children: PropTypes.element,
   renderIcon: PropTypes.element,
+  ...propTypes.layout,
+  ...propTypes.space,
+};
+
+export const AccordionGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  ${flexbox} ${space} ${layout}
+`;
+
+AccordionGroup.propTypes = {
+  ...propTypes.space,
+  ...propTypes.layout,
+  ...propTypes.flexbox,
 };
 
 export default Accordion;
